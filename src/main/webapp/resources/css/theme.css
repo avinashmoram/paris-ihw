@@ -1,0 +1,1192 @@
+/*************************Custom styles****************************************************************/
+/***********************************************************************************
+ * PARIS                                                                           *
+ * Version: 1.0                                                                    *
+ * Author: Nebiyou Tibebu                                                          *
+ ***********************************************************************************/
+html,body {
+   font-size: 12px;
+   font-family: verdana, arial, sans-serif;
+   margin: 0px;
+   background-color: #23528B;
+}
+
+fieldset {
+   padding-left: 0;
+   margin: 1px;
+   border-style: none;
+}
+
+fieldset legend {
+   background-color: #23528B;
+   color: white;
+   font-weight: bolder;
+   font-size: 13px;
+   width: 100%;
+}
+
+fieldset label {
+   font-weight: bold;
+}
+
+.description-text-box {
+   width: 500px;
+   height: 100px;
+}
+
+/*******************************Toggle Control**************************************/
+DIV.open-nav {
+   position: absolute;
+   top: 20px;
+   width: 20px;
+   height: 100%;
+   left: 0px;
+}
+
+DIV.close-nav {
+   background-color: #A8BED6;
+   color: white;
+   font-weight: bold;
+   width: 250px;
+   top: 0px;
+   position: absolute;
+   left: 0px;
+   text-align: right;
+   margin-right: 10px;
+}
+
+/******************************* Layout Styles ************************************/
+.login {
+   position: absolute;
+   left: 450px;
+   top: 200px;
+}
+
+#wrapper {
+   min-width: 780px;
+   min-height: 768px;
+}
+
+#header {
+   height: 100px;
+   width: 100%;
+   background-image: url(${facesContext.externalContext.requestContextPath}/img/tnetbanner_bkgrnd.GIF);
+}
+
+.title-section-full {
+   text-align: center;
+   background-color: #23528B;
+   color: white;
+   margin-left: 0px;
+   margin-right: 0px;
+   font-size: 14px;
+   font-weight: bold;
+   height: 20px;
+}
+
+.title-section {
+   text-align: center;
+   background-color: #23528B;
+   color: white;
+   margin-left: 2px;
+   margin-right: 2px;
+   font-size: 14px;
+   font-weight: bold;
+   height: 20px;
+}
+
+.title-section-contacts {
+   text-align: center;
+   background-color: #23528B;
+   color: white;
+   margin-left: 2px;
+   margin-right: 2px;
+   font-size: 12px;
+   font-weight: bold;
+   height: 20px;
+}
+
+.header-section {
+   text-align: center;
+   background-color: #23528B;
+   color: white;
+   margin-left: 2px;
+   margin-right: 2px;
+   font-size: 12px;
+   font-weight: bold;
+   height: 20px;
+}
+
+#navigation {
+   width: 20%;
+   float: left;
+   height: auto;
+   background-color: #23528B;
+}
+
+#content {
+   width: 79%;
+   padding-top: 20px;
+   float: right;
+   padding-left: 5px;
+   padding-right: 5px;
+   background-color: #F0E9C4;
+   min-height: 830px;
+}
+
+#footer {
+   clear: both;
+   height: 40px;
+   background-color: #23528B;
+   text-align: center;
+   color: white;
+}
+
+input[type=text] {
+   border: 1px solid #23528B;
+}
+
+select {
+   border: 1px solid #23528B;
+}
+
+input.disabled {
+   background-color: black;
+   color: yellow;
+}
+
+select.disabled-class {
+   background-color: gray;
+   color: yellow;
+   font-weight: bold;
+}
+
+/***********************************************************************************************************************/
+
+/**********TABLE STYLES*****************/
+.column-width-2 {
+   width: 2%;
+}
+
+.column-width-4 {
+   width: 4%;
+}
+
+.column-width-5 {
+   width: 5%;
+}
+
+.column-width-6 {
+   width: 6%;
+}
+
+.column-width-10 {
+   width: 10%;
+}
+
+.column-width-15 {
+   width: 15%;
+}
+
+.column-width-20 {
+   width: 20%;
+}
+
+.column-width-25 {
+   width: 15%;
+}
+
+.column-width-30 {
+   width: 30%;
+}
+
+.column-width-35 {
+   width: 35%;
+}
+
+.column-width-40 {
+   width: 40%;
+}
+
+.column-width-40-top {
+   width: 40%;
+   vertical-align: top;
+}
+
+.column-width-30-top {
+   width: 30%;
+   vertical-align: top;
+}
+
+.column-width-50 {
+   width: 50%;
+}
+
+.column-width-60 {
+   width: 60%;
+}
+
+.column-width-60-top {
+   width: 60%;
+   vertical-align: top;
+}
+
+.column-width-70-top {
+   width: 70%;
+   vertical-align: top;
+}
+
+.column-width-65 {
+   width: 65%;
+}
+
+.column-width-70 {
+   width: 70%;
+}
+
+.column-width-75 {
+   width: 75%;
+}
+
+.column-width-80 {
+   width: 80%;
+}
+
+.centered-column {
+   text-align: center;
+}
+
+.justified-column {
+   text-align: justify;
+}
+
+.right-aligned-column {
+   text-align: right;
+}
+
+.column-verticle-top {
+   vertical-align: top;
+}
+
+.verticle-top-td td {
+   vertical-align: top;
+}
+
+.row2 {
+   background-color: #A5A293;
+   color: black;
+   white-space: normal;
+   border-style: none;
+}
+
+.row1 {
+   background-color: #F0E9C4;
+   /* color : #23528B; */
+   color: black;
+   white-space: normal;
+   border-style: none;
+}
+
+.row2-centered {
+   background-color: #A5A293;
+   color: black;
+   text-align: center;
+}
+
+.row1-centered {
+   background-color: #F0E9C4;
+   color: black;
+   text-align: center;
+}
+
+.number-column {
+   text-align: right;
+}
+
+/* CMRT1825 Judy Xu 06/18/12 add style for description column */
+.string-column {
+   text-align: justify;
+}
+
+.description-column {
+   text-align: justify;
+   width: 10%;
+}
+
+.icon-column {
+   text-align: center;
+}
+
+.message-column {
+   text-align: left;
+}
+
+/*****************************************************************************************/
+
+.submit_button_small_white {
+   background: transparent url(../img/square-blue-right.gif) no-repeat top left;
+   FONT-WEIGHT: bolder;
+   color: #494949; /*button text color*/
+   MARGIN-LEFT: 2px;
+   MARGIN-RIGHT: 2px;
+   color: black;
+   HEIGHT: 22px;
+   TEXT-ALIGN: center;
+   border: 1px solid #23528B;
+   font: normal 12px Arial; /* Change 12px as desired */
+}
+
+.submit_button_small_white1 {
+   background: transparent url(../img/square-blue-right.gif) no-repeat top left;
+   FONT-WEIGHT: bolder;
+   color: #494949; /*button text color*/
+   MARGIN-LEFT: 2px;
+   MARGIN-RIGHT: 2px;
+   color: black;
+   HEIGHT: 22px;
+   TEXT-ALIGN: right;
+   border: 1px solid #23528B;
+   font: normal 12px Arial; /* Change 12px as desired */
+}
+
+/* Hover state CSS */
+.submit_button_small_white:hover {
+   background-position: bottom left;
+   color: #494949;
+}
+
+.submit_button_small_dark {
+   FONT-WEIGHT: bolder;
+   MARGIN-LEFT: 2px;
+   COLOR: white;
+   MARGIN-RIGHT: 2px;
+   HEIGHT: 20px;
+   TEXT-ALIGN: center;
+   background-color: #4F7C26;
+   border-color: #2B725A;
+   border: 1px solid;
+}
+
+.submit_button_small_blue {
+   FONT-WEIGHT: bolder;
+   MARGIN-LEFT: 2px;
+   COLOR: white;
+   MARGIN-RIGHT: 2px;
+   HEIGHT: 20px;
+   TEXT-ALIGN: center;
+   background-color: #4E95BA;
+   border-color: #97FBFBF;
+   border: 1px solid;
+}
+
+.submit_button_small_green {
+   FONT-WEIGHT: bolder;
+   MARGIN-LEFT: 2px;
+   COLOR: white;
+   MARGIN-RIGHT: 2px;
+   HEIGHT: 20px;
+   TEXT-ALIGN: center;
+   background-color: #999966;
+   background-repeat: no-repeat;
+   BACKGROUND-POSITION: center 50%;
+   border: 1px solid #58727A;
+}
+
+input[type=submit].button-link {
+   border: none;
+   color: blue;
+   font-family: verdana, arial, sans-serif;
+   text-decoration: underline;
+   background: none;
+   margin-left: 2px;
+   margin-right: 2px;
+   padding: 0px;
+   overflow: visible;
+   width: auto;
+   cursor: pointer;
+}
+
+tr.spaceUnder>td {
+   padding-bottom: 1.5em;
+   padding-top: 0.5em;
+   border-bottom: 1px solid;
+}
+
+input[type=submit].button-link:disabled {
+   border: none;
+   color: black;
+   font-family: verdana, arial, sans-serif;
+   background: none;
+   margin-left: 2px;
+   margin-right: 2px;
+   padding: 0px;
+   overflow: visible;
+   width: auto;
+}
+
+input[type=submit][disabled=disabled], 
+button[disabled=disabled] {
+   border: 1px solid #999999;   
+   color: GrayText;
+   background: #dddddd;
+   cursor: inherit;
+}
+
+input[type=submit].button-link-white {
+   background: none;
+   border: none;
+   color: white;
+   font-family: verdana, arial, sans-serif;
+   font-weight: bold;
+   text-decoration: underline;
+   margin: 0px;
+   padding: 0px;
+   overflow: visible;
+   width: auto;
+   cursor: pointer;
+}
+
+.page-title {
+   background-color: #23528B;
+   color: white;
+   font-weight: bold;
+   font-size: 13px;
+   text-align: center;
+}
+
+.page-header-left {
+   background-color: #23528B;
+   color: white;
+   font-weight: bold;
+   text-align: left;
+   width: 100%;
+}
+
+.page-header-center {
+   background-color: #23528B;
+   color: white;
+   font-weight: bold;
+   text-align: center;
+   width: 100%;
+}
+
+.table-header {
+   background-color: #23528B;
+   color: white;
+   font-weight: bold;
+   text-align: center;
+}
+
+table.grid {
+   width: 100%;
+   border-color: #23528B;
+   border-style: solid;
+   border-width: 1px;
+}
+
+table.grid1 {
+   width: 33%;
+   border-color: #23528B;
+   border-style: solid;
+   border-width: 1px;
+}
+
+table.nogrid {
+   width: 100%;
+   border-color: #23528B;
+   border-style: solid;
+   border-width: 0px;
+}
+
+table.grid caption {
+   font-size: 1.4em;
+   text-align: center;
+   background-color: olive;
+   color: white;
+   font-weight: bold;
+}
+
+th,td table.grid {
+   border-width: 1px;
+   border-color: #23528B;
+   border-style: solid;
+   border-collapse: collapse;
+}
+
+.summary-error {
+   border-width: 1px;
+   border-color: #23528B;
+   border-style: none;
+   border-collapse: collapse;
+   text-align: center;
+}
+
+textarea {
+   border: 1px solid #23528B;
+   font-family: inherit;
+}
+
+th,td table.noborder {
+   border: none;
+}
+
+th table.grid {
+   text-align: center;
+}
+/*******************************************************************************************/
+/********************Rich Faces*************************************/
+.rich-tab-header {
+   color: black;
+   font-weight: bold;
+   background-color: olive;
+   
+}
+
+
+
+.rich-calendar-input {
+   width: 65px;
+}
+
+.rich-table {
+   width: 100%;
+}
+
+.rich-table-header,.rich-table-headercell,.rich-table-cell,.rich-subtable-cell,.rich-table-footercell,.rich-subtable-footercell
+   {
+   border-width: 0px;
+}
+
+.rf-fu {
+   background-color: #F0E9C4;
+}
+
+.rf-fu-hdr {
+   background-color: #F0E9C4;
+}
+
+/***********************SEAM Generated styles***********************/
+a img {
+   border: none;
+}
+
+h1 {
+   font-size: 1.6em;
+   margin-top: 0;
+}
+
+input[type=submit],input[type=button] {
+   font-size: 11px;
+   margin: 5px 5px 5px 0;
+   cursor: pointer;
+}
+
+input[type=text],input[type=password],textarea {
+   font-size: 11px;
+   padding-left: 1px;
+}
+
+select {
+   font-size: 11px;
+   font-family: verdana, arial, sans-serif;
+}
+
+.tableControl,.actionButtons {
+   width: 100%;
+}
+
+.tableControl a {
+   padding-left: 10px;
+}
+
+.tableControl {
+   text-align: right;
+}
+
+.body {
+   padding: 30px;
+}
+
+.message {
+   padding: 5px;
+   list-style: none;
+   border: 0;
+   background: none;
+   padding: 0;
+   color: #000000;
+   margin: 5px 0 8px 0;
+   min-height: 20px;
+}
+
+.message li {
+   background: no-repeat left center;
+   padding-top: 1px;
+   padding-left: 20px;
+   margin-left: 3px;
+}
+
+.message li.infomsg {
+   background-image: url(../img/infoimg.png);
+   color: black;
+   font-size: 17px;
+   font-family: verdana, arial, sans-serif;
+   margin: 10px 0 18px 0;
+   padding-left: 25px;
+   margin-left: 10px;   
+}
+
+.message li.errormsg {
+   background-image: url(../img/errimg.png);
+   color: black;
+   font-size: 17px;
+   font-family: verdana, arial, sans-serif;
+   margin: 10px 0 18px 0;
+   padding-left: 25px;
+   margin-left: 10px;
+}
+
+.message li.warnmsg {
+   background-image: url(../img/warnimg.png);
+   color: black;
+   font-size: 17px;
+   font-family: verdana, arial, sans-serif;
+   margin: 10px 0 18px 0;
+   padding-left: 30px;
+   margin-left: 10px;
+}
+
+/** 
+BMH 04.25.2011 - this style is not used anywhere except xedit.xhtml tag and that
+tag is not used anywhere
+*/
+.name {
+   vertical-align: top;
+   font-weight: bold;
+   width: 115px;
+   float: left;
+   padding: 5px;
+   margin-top: 3px;
+   clear: left;
+   border-style: none;
+}
+
+.wmu-crossref-boxes {
+   min-width: 250px;
+   max-width: 250px;
+   max-height: 200px;
+   min-height: 200px;
+   overflow: auto;
+   width: 100%;
+}
+
+.name2 {
+   vertical-align: top;
+   font-weight: bold;
+   float: left;
+   padding: 5px;
+   margin-top: 3px;
+   clear: left;
+   border-style: none;
+}
+
+.namePst {
+   vertical-align: top;
+   font-weight: bold;
+   float: left;
+   margin-top: 3px;
+   clear: left;
+   border-style: none;
+}
+
+.namePst1 {
+   vertical-align: top;
+   font-weight: bold;
+   float: left;
+   margin-top: 3px;
+   padding-left: 10px;
+   clear: left;
+   border-style: none;
+}
+
+.namePst3{
+	 vertical-align: top;
+   
+   padding-bottom: 80px;
+}
+.imagegrayout {
+   opacity: 0.4;
+   filter: alpha(opacity = 40);
+}
+
+.italictext {
+   vertical-align: top;
+   font-weight: italic;
+   float: left;
+   padding: 5px;
+   margin-top: 3px;
+   clear: left;
+   border-style: none;
+}
+
+.instruction {
+   font-style: italic;
+}
+
+.superscript {
+	color: #288bf8;
+	font-weight: bold;
+	font-size: small;
+	text-decoration: none;
+}
+
+.value {
+   float: left;
+   padding: 5px;
+   border-style: none;
+}
+
+.error {
+   float: left;
+   padding: 5px;
+}
+
+.errors {
+   color: #FF0000;
+   vertical-align: middle;
+}
+
+img.errors {
+   padding-right: 5px;
+}
+
+.errors input,.errors textarea,.errors select {
+   border: 1px solid black !important;
+}
+
+.required {
+   color: #FF0000;
+   padding-left: 2px;
+}
+
+.rich-stglpanel-body {
+   overflow: auto;
+}
+
+.rich-panel-header {
+   text-align: center;
+   font-weight: bold;
+   color: white;
+   background-color: #23528B;
+   border: solid 0px;
+}
+
+.rich-panel {
+   border: solid 1px #23528B;
+   padding: 5px 5px 5px 5px;
+}
+
+.rich-panel-customer-utilities {
+   color: white;
+   background-color: #23528B;
+   border: solid 1px #23528B;
+   padding: 2px 2px 2px 2px;
+}
+
+.rich-panel-header-red {
+   text-align: center;
+   font-weight: bold;
+   color: white;
+   background-color: black;
+}
+
+.rich-panel-red {
+   color: black;
+   background-color: #F0E9C4;
+   border: 1px solid black;
+   width: 100%;
+}
+
+.rich-panel-customer-utilities {
+   color: white;
+   background-color: #23528B;
+   border: solid 1px #23528B;
+   padding: 2px 2px 2px 2px;
+}
+
+.rich-tab-active {
+
+    font-weight: bold;
+    font-size: 110%;
+       height: 100%;
+       background: #23528B;
+       color: white;
+       white-space: nowrap;
+}
+ 
+.rich-toolbar {
+   background-color: green;
+   color: white;
+}
+
+
+.rich-tab-inactive {
+	font-size: 90%;
+       white-space: wrap;
+}
+
+
+.rich-panel input[type=submit],.rich-panel input[type=button],.rich-tabpanel input[type=submit],.rich-tabpanel input[type=button]
+   {
+   margin-bottom: 0;
+   
+}
+
+.tableControl input[type=submit],.tableControl input[type=button],.tableControl select {
+   margin: 5px 0 5px 5px;
+}
+
+.tableControl select {
+   margin-left: 2px;
+   position: relative;
+   top: 1px;
+}
+
+.actionButtons {
+   padding-bottom: 5px;
+   padding-left: 50px;
+}
+
+.actionButtons select {
+   margin: 5px 5px 5px 0;
+   vertical-align: bottom;
+}
+
+.classColoumns {
+   text-align: right;
+}
+
+.rich-toolbar-item a {
+   text-decoration: none;
+}
+
+.rich-toolbar-item a:hover,.rich-ddmenu-label-select {
+   text-decoration: underline;
+}
+
+.rich-toolbar-item .rich-menu-item a:hover {
+   text-decoration: none;
+}
+
+.rich-datalist {
+   list-style: square;
+   margin: 6px 0 1px 0;
+   padding-left: 18px;
+}
+
+.rich-list-item {
+   padding-bottom: 4px;
+}
+
+DIV.info {
+   font-size: 1.2em;
+}
+
+ul.bullets {
+   list-style: square;
+}
+
+ul.bullets li {
+   padding-bottom: 2px;
+}
+
+td.action {
+   text-align: center;
+   white-space: nowrap;
+}
+
+td.action a {
+   padding-left: 1px;
+   padding-right: 1px;
+}
+
+table.radio {
+   border: 0;
+}
+
+table.radio td {
+   padding: 0 2px;
+}
+
+table.radio input[type=radio] {
+   vertical-align: bottom;
+}
+
+/*  BMH 11.03.2010
+	Firefox supports a selector to style disabled fields,
+	style firefox to match IE 7.  IE ignores this styling
+	*/
+input[disabled="true"] {
+   color: gray;
+   background-color: white;
+}
+
+div.waste-audit label {
+   font-weight: bolder;
+}
+
+.label {
+   font-weight: bold;
+}
+
+.col1 {
+   text-align: center;
+}
+
+.column1of2 {
+   vertical-align: top;
+   text-align: left;
+   margin-top: auto;
+   margin-left: auto;
+   width: 50%;
+   padding-right: 30px;
+}
+
+.column2of2 {
+   vertical-align: top;
+   text-align: left;
+   margin-top: auto;
+   margin-left: auto;
+   width: 50%;
+   padding-right: 30px;
+}
+
+.addcolumn1of2 {
+   vertical-align: top;
+   text-align: left;
+   width: 40%;
+}
+
+.addcolumn2of2 {
+   vertical-align: top;
+   text-align: left;
+   width: 60%;
+}
+
+.dmscolumn1of2 {
+   vertical-align: top;
+   text-align: left;
+   width: 30%;
+}
+
+.dmscolumn2of2 {
+   vertical-align: top;
+   text-align: left;
+   width: 70%;
+}
+
+.pstCompInfoFilterColLeft {
+   text-align: left;
+}
+
+.pstCompInfoFilterColRight {
+   text-align: right;
+   width: 40%;
+}
+
+.pstcolumn1of2 {
+   vertical-align: top;
+   text-align: left;
+   width: 60%;
+}
+
+.pstcolumn2of2 {
+   vertical-align: top;
+   text-align: right;
+   width: 40%;
+}
+
+.wqcolumn1of2 {
+   vertical-align: top;
+   text-align: left;
+   width: 50%;
+}
+
+.wqcolumn2of2 {
+   vertical-align: top;
+   text-align: right;
+   width: 50%;
+}
+
+.columnLabel1 {
+   vertical-align: top;
+   text-align: left;
+   width: 30%;
+}
+
+.columnLabel11 {
+   vertical-align: top;
+   text-align: left;
+   width: 50%;
+}
+
+.columnInput {
+   vertical-align: top;
+   text-align: left;
+   width: 30%;
+}
+
+.columnLabel2 {
+   vertical-align: top;
+   text-align: left;
+   width: 40%;
+}
+
+.label-search-column {
+   vertical-align: top;
+   text-align: left;
+   margin-top: auto;
+   margin-left: auto;
+   padding-left: 5px;
+   padding-right: 20px;
+}
+
+.label-value-column {
+   vertical-align: top;
+   text-align: left;
+   margin-top: auto;
+   margin-left: auto;
+   padding-left: 0px;
+   padding-right: 20px;
+}
+
+.column1of3 {
+   vertical-align: top;
+   text-align: left;
+   margin-top: auto;
+   margin-left: auto;
+   width: 30%;
+   padding-right: 30px;
+}
+
+.column2of3 {
+   vertical-align: top;
+   text-align: left;
+   margin-top: auto;
+   margin-left: auto;
+   width: 50%;
+   padding-right: 30px;
+}
+
+.column3of3 {
+   vertical-align: top;
+   text-align: right;
+   width: 20%;
+}
+
+.tale-column-header {
+   background: none;
+   border: none;
+   color: white;
+   font-family: verdana, arial, sans-serif;
+   font-weight: bold;
+   margin: 0px;
+   padding: 0px;
+   overflow: visible;
+   width: auto;
+}
+
+/*
+Breadcrumbs the 'You are here' section
+of template.xhtml
+*/
+div.breadcrumbs {
+   text-align: left;
+   padding: 1px;
+   margin: 1px;
+   color: black;
+}
+
+div.breadcrumbs a {
+   color: blue;
+}
+
+input:disabled,
+textarea:disabled,
+option:disabled,
+optgroup:disabled,
+select:disabled:disabled {
+   -moz-user-focus: ignore;
+   -moz-user-input: disabled;
+   background-color: threedface;
+   color: graytext;
+   cursor: inherit;
+}
+
+input:disabled,
+textarea:disabled,
+option:disabled,
+optgroup:disabled,
+select:disabled:disabled {
+   -moz-user-focus: ignore;
+   -moz-user-input: disabled;
+   background-color: #F0E9C4;
+   color: black;
+   cursor: inherit;
+}
+
+input[disabled="disabled"] {
+   color: black;
+   background-color: #F0E9C4;
+}
+
+textarea[disabled="disabled"] {
+   color: black;
+   background-color: #F0E9C4;
+}
+
+option[disabled="disabled"] {
+   color: black;
+   background-color: #F0E9C4;
+}
+
+optgroup[disabled="disabled"] {
+   color: black;
+   background-color: #F0E9C4;
+}
+
+select[disabled="disabled"] {
+   color: black;
+   background-color: #F0E9C4;
+}
+
+/*******************************Navigation collapser **************************************/
+.navigationcollapser {
+   background-position: right center;
+   background-repeat: no-repeat;
+   bottom: 0;
+   cursor: move;
+   display: block;
+   position: absolute;
+   top: 0;
+   width: 8px;
+}
+
+.navigationexpanded {
+   right: 80% !important;
+}
+
+.contentExpanded {
+   width: 99% !important;
+}
+
+.navigationcollapsed {
+   width: 0% !important;
+   visibility: hidden !important;
+   background-color: #F0E9C4 !important;
+}
+
+.collapser {
+   visibility: hidden !important;
+}
+
+/*******************************Navigation collapser end**************************************/

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Registration Information System</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<h:outputStylesheet name="css/theme.css" />
+	<h:outputStylesheet name="css/ihw.css" />
+</h:head>
+<h:body>
+
+	<p:layout fullpage="true" widgetVar="parisWdgt">
+		<p:layoutUnit position="north">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody>
+					<tr>
+						<td class="paris-header"><p:outputLabel>You are signed in as: AMORAM, Environment: parisdev1</p:outputLabel></td>
+						<td style="width: 100%"></td>
+						<td><p:link styleClass="paris-header" value="Logout"
+								outcome="index" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</p:layoutUnit>
+		<p:layoutUnit position="south" header="Bottom">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody>
+					<tr>
+						<td>Powered by <h:outputLink styleClass="paris-header"
+								value="http://primefaces.org">PrimeFaces</h:outputLink>6.1, <h:outputLink
+								styleClass="paris-header" value="https://developers.redhat.com/products/eap/overview/">Red Hat EAP</h:outputLink>7.0.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</p:layoutUnit>
+		<p:layoutUnit id="eastbody" position="center" style="border: 1px solid #a8a8a8;">
+			<div id="content">
+				<p:breadCrumb id="bread-crumb">
+					<p:menuitem value="Home:" url="index" />
+					<p:menuitem value="IHW" url="#" />
+					<p:menuitem value="MWRS Search" url="#" />
+				</p:breadCrumb>
+				<p:panel header="MWRS Search">
+					<p:messages id="messages" showDetail="true" autoUpdate="true"
+						closable="true" />
+				</p:panel>
+				<p:panel header="Search Criteria">
+					<h:panelGrid columns="4" width="80%">
+						<p:outputLabel for="receiverSWR" value="Receiver SWR:"></p:outputLabel>
+						<h:panelGrid cellpadding="0" cellspacing="0">
+							<h:panelGroup>
+								<p:inputText size="5" maxlength="10" id="receiverSWR" />
+								<p:outputLabel value="&#160;&#160;" />
+								<p:commandButton value="Search for Receiver SWR" />
+							</h:panelGroup>
+						</h:panelGrid>
+						<p:outputLabel for="manifest">Manifest #:</p:outputLabel>
+						<p:inputText size="20" maxlength="12" id="manifest" />
+						<p:outputLabel for="generatorSWR">Generator SWR:</p:outputLabel>
+						<h:panelGrid cellpadding="0" cellspacing="0">
+							<h:panelGroup>
+								<p:inputText size="5" maxlength="10" id="generatorSWR" />
+								<p:outputLabel value="&#160;&#160;" />
+								<p:commandButton value="Search for Generator SWR" />
+							</h:panelGroup>
+						</h:panelGrid>
+						<p:outputLabel for="reportMonth">Report Month:</p:outputLabel>
+						<p:selectOneMenu id="reportMonth">
+							<f:selectItem itemLabel="" itemValue="" />
+							<f:selectItem itemLabel="January" itemValue="Jan" />
+							<f:selectItem itemLabel="February" itemValue="Feb" />
+							<f:selectItem itemLabel="March" itemValue="Mar" />
+							<f:selectItem itemLabel="April" itemValue="Apr" />
+							<f:selectItem itemLabel="May" itemValue="May" />
+							<f:selectItem itemLabel="June" itemValue="Jun" />
+							<f:selectItem itemLabel="July" itemValue="Jul" />
+							<f:selectItem itemLabel="August" itemValue="Aug" />
+							<f:selectItem itemLabel="September" itemValue="Sep" />
+							<f:selectItem itemLabel="October" itemValue="Oct" />
+							<f:selectItem itemLabel="November" itemValue="Nov" />
+							<f:selectItem itemLabel="December" itemValue="Dec" />
+						</p:selectOneMenu>
+						<p:outputLabel for="twc">TWC:</p:outputLabel>
+						<p:inputText size="20" maxlength="10" id="twc" />
+						<p:outputLabel for="reportYear">Report Year:</p:outputLabel>
+						<p:inputText size="5" maxlength="10" id="reportYear" />
+						<p:outputLabel for="recordId">Record Id:</p:outputLabel>
+						<p:inputText size="20" maxlength="10" id="recordId" />
+					</h:panelGrid>
+					<h:panelGrid columns="3">
+						<p:commandButton value="Search" />
+						<p:commandButton value="Clear" />
+						<p:commandButton value="Ceate New Summary" />
+					</h:panelGrid>
+				</p:panel>
+				<p:panel header="Search Results">
+					<p:dataTable id="tbl" var="mwrs"
+						value="#{mwrsSearchResultsView.mwrs}"
+						paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} 
+							{NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+						rowsPerPageTemplate="10,25,50,100,#{mwrsSearchResultsView.mwrs.size()}"
+						paginator="true" rows="8" style="margin-bottom:10px;"
+						scrollable="true" scrollHeight="250" sortMode="single"
+						resizableColumns="true" reflow="true"
+						emptyMessage="No records found with given criteria">
+
+						<p:column headerText="Receiver SWR" sortBy="#{mwrs.receiverSWR}"
+							colspan="5">
+							<h:outputText value="#{mwrs.receiverSWR}" />
+						</p:column>
+
+						<p:column headerText="Report Month" sortBy="#{mwrs.month}"
+							colspan="5">
+							<h:outputText value="#{mwrs.month}" />
+						</p:column>
+
+						<p:column headerText="Report Year" sortBy="#{mwrs.year}"
+							colspan="5">
+							<h:outputText value="#{mwrs.year}" />
+						</p:column>
+
+						<p:column headerText="View" colspan="1">
+							<p:commandButton icon="fa fa-binoculars fileView" title="view"
+								alt="view"></p:commandButton>
+						</p:column>
+
+						<p:column headerText="Edit" colspan="1">
+							<p:commandButton title="edit" alt="edit"
+								icon="fa fa-pencil-square-o fileEdit"></p:commandButton>
+						</p:column>
+
+						<p:column headerText="Delete" colspan="1">
+							<p:commandButton title="delete" alt="delete"
+								icon="fa fa-trash fileDelete"></p:commandButton>
+						</p:column>
+
+						<f:facet name="footer">
+        						In total there are #{mwrsSearchResultsView.mwrs.size()} records.
+    					</f:facet>
+
+					</p:dataTable>
+					<p:commandButton value="Cancel" />
+				</p:panel>
+			</div>
+		</p:layoutUnit>
+		<p:layoutUnit position="west" resizable="true" collapsible="true"
+			header="" effect="drop" size="250">
+			<p:panel style="width:100%;">
+				<!-- <p:commandButton title="collapse" alt="collapse"
+					icon="ui-icon ui-icon-triangle-1-w"></p:commandButton> -->
+				<p:tree value="#{treeIconView.root}" var="doc" highlight="true"
+					animate="true" selectionMode="single">
+					<p:treeNode expandedIcon="fa fa-folder-open"
+						collapsedIcon="fa fa-folder">
+						<p:link value="#{doc.name}" outcome="#{doc.link}" />
+					</p:treeNode>
+					<p:treeNode type="document" icon="fa fa-file-text-o fileColor">
+						<p:link value="#{doc.name}" outcome="#{doc.link}" />
+					</p:treeNode>
+				</p:tree>
+			</p:panel>
+		</p:layoutUnit>
+
+	</p:layout>
+
+</h:body>
+</html>

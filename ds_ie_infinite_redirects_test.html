@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head id="j_idt2">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title>Test DS infinite redirects issue Internet Explorer</title>
+		<script type="text/javascript">
+        var wnd
+        function launch(url, app){
+            if(!wnd || wnd.closed){
+                wnd = window.open(url, app, 'height=700,width=1350,toolbar=no,location=no,menubar=no,status=no,titlebar=no,resizable=yes,scrollbars=yes');
+            }
+            wnd.focus();
+            return false;
+        }
+		</script>
+	</head>
+	<body>
+		<div style="background-color: #ffffff !important; margin-top: 100px; clear: both">
+			<div>
+				<form id="frmMsg" name="frmMsg" method="post" enctype="application/x-www-form-urlencoded">
+					<div class="autoCenter" style="width: 700px;">
+						<h2>Select an application to launch it in a new window</h2>
+						<div style="padding-top: 1em;">
+							<div class="floatLeft" style="padding: 0 5px; width: 75px;">
+								<div class="autoCenter center">
+									<a href="javascript:void(0)" onClick="launch('http://localhost:8080/paris-ihw/', 'AVI')" /> AVI
+								</a> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

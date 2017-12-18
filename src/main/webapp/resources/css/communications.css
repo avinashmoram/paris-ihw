@@ -1,0 +1,97 @@
+/*************************Custom Styles********************************************/
+/***********************************************************************************
+ * PARIS                                                                           *
+ * Version: 1.0                                                                    *
+ * Author: Scott Bowers                                                            *
+ ***********************************************************************************/
+
+html, body {
+	font-size: 12px;
+	font-family: verdana, arial, sans-serif;
+	margin: 0px;
+	background-color:  #FFFFFF;
+}
+
+.rich-panel {
+    background-color:   #FFFFFF;
+}
+
+rich-panel.thick {
+    background-color:   #FFFFFF;
+    border-width: 3px;
+    border-color: blue;
+    border-style: solid;
+}
+
+rich-panel.outer-panel {
+	border-style: ridge;
+	border-width: 50px;
+	border-color: black;
+	background-color:   #FFFFFF;
+	margin:25px 25px 25px 25px; 
+}
+
+.values {
+font-family:verdana, sans-serif;
+font-style: italic;
+font-size: 24px;
+}
+
+.labels {
+font-family:verdana, sans-serif;
+font-style: normal;
+font-size: 18px;
+}
+
+th.grid-lines {
+border-style: solid;
+border-width: 1px;
+border-color: black;
+border-collapse:collapse;
+width: 100%;
+}
+
+tr.grid-lines {
+border-style: solid;
+border-width: 1px;
+border-color: black;
+border-collapse:collapse;
+width: 100%;
+}
+
+table.grid-lines {
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	border-collapse:collapse;
+	width: 100%;
+}
+
+td.grid-lines {
+	border:1px solid black;
+}
+
+.table-header {
+    /* 
+    background-color: #23528B; 
+    color: white; 
+    */
+    font-weight: bold;
+    text-align : center;
+}
+
+.table-row-odd {
+    background-color: LightGray;
+    color: black;
+    white-space: normal;
+    border-style : none;
+}
+
+.table-row-even {
+    background-color: white;
+    color: black;
+    white-space: normal;
+    border-style : none;
+}
+
+

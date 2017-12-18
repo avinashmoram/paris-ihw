@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Registration Information System</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<h:outputStylesheet name="css/theme.css" />
+	<h:outputStylesheet name="css/ihw.css" />
+</h:head>
+<body>
+	<table border="0" cellpadding="0" cellspacing="0" id="header"
+		width="100%">
+		<tbody>
+			<tr>
+				<td class="header">&nbsp;You are signed in as: AMORAM,
+					Environment: dev1</td>
+				<td style="width: 100%"></td>
+				<td><p:link styleClass="header" value="Logout" /></td>
+			</tr>
+		</tbody>
+	</table>
+	<div id="wrapper">
+		<div id="navigation">
+			<p:layout>
+				<p:layoutUnit position="center">
+				</p:layoutUnit>
+				<p:layoutUnit position="west" collapsible="true" header="Menu" resizable="true" >
+					<p:tree id="menu" value="#{treeIconView.root}" var="doc"
+						selectionMode="single">
+						<p:treeNode expandedIcon="fa fa-folder-open"
+							collapsedIcon="fa fa-folder">
+							<p:link value="#{doc.name}" />
+						</p:treeNode>
+						<p:treeNode type="document" icon="fa fa-file-text-o fileColor">
+							<p:link value="#{doc.name}" />
+						</p:treeNode>
+					</p:tree>
+				</p:layoutUnit>
+				</p:layout>
+		</div>
+		<div id="content">
+			<p:layout>
+				<p:layoutUnit position="north" style="border: 1px solid #a8a8a8;">
+					<p:breadCrumb>
+						<p:menuitem value="Home:" url="#" />
+						<p:menuitem value="IHW" url="#" />
+						<p:menuitem value="MWRS Search" url="#" />
+					</p:breadCrumb>
+					<p:panel header="MWRS Search">
+						<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+					</p:panel>
+					<p:panel header="Search Criteria">
+						<h:panelGrid columns="4" width="80%">
+							<p:outputLabel for="receiverSWR" value="Receiver SWR:"></p:outputLabel>
+							<h:panelGrid cellpadding="0" cellspacing="0">
+								<h:panelGroup>
+									<p:inputText size="5" maxlength="10" id="receiverSWR" />
+									<p:outputLabel value="&#160;&#160;" />
+									<p:commandButton value="Search for Receiver SWR" />
+								</h:panelGroup>
+							</h:panelGrid>
+							<p:outputLabel for="manifest">Manifest #:</p:outputLabel>
+							<p:inputText size="20" maxlength="12" id="manifest" />
+							<p:outputLabel for="generatorSWR">Generator SWR:</p:outputLabel>
+							<h:panelGrid cellpadding="0" cellspacing="0">
+								<h:panelGroup>
+									<p:inputText size="5" maxlength="10" id="generatorSWR" />
+									<p:outputLabel value="&#160;&#160;" />
+									<p:commandButton value="Search for Generator SWR" />
+								</h:panelGroup>
+							</h:panelGrid>
+							<p:outputLabel for="reportMonth">Report Month:</p:outputLabel>
+							<p:selectOneMenu id="reportMonth">
+								<f:selectItem itemLabel="" itemValue="" />
+								<f:selectItem itemLabel="January" itemValue="Jan" />
+								<f:selectItem itemLabel="February" itemValue="Feb" />
+								<f:selectItem itemLabel="March" itemValue="Mar" />
+								<f:selectItem itemLabel="April" itemValue="Apr" />
+								<f:selectItem itemLabel="May" itemValue="May" />
+								<f:selectItem itemLabel="June" itemValue="Jun" />
+								<f:selectItem itemLabel="July" itemValue="Jul" />
+								<f:selectItem itemLabel="August" itemValue="Aug" />
+								<f:selectItem itemLabel="September" itemValue="Sep" />
+								<f:selectItem itemLabel="October" itemValue="Oct" />
+								<f:selectItem itemLabel="November" itemValue="Nov" />
+								<f:selectItem itemLabel="December" itemValue="Dec" />
+							</p:selectOneMenu>
+							<p:outputLabel for="twc">TWC:</p:outputLabel>
+							<p:inputText size="20" maxlength="10" id="twc" />
+							<p:outputLabel for="reportYear">Report Year:</p:outputLabel>
+							<p:inputText size="5" maxlength="10" id="reportYear" />
+							<p:outputLabel for="recordId">Record Id:</p:outputLabel>
+							<p:inputText size="20" maxlength="10" id="recordId" />
+						</h:panelGrid>
+						<h:panelGrid columns="3">
+							<p:commandButton value="Search" />
+							<p:commandButton value="Clear" />
+							<p:commandButton value="Ceate New Summary" />
+						</h:panelGrid>
+					</p:panel>
+				</p:layoutUnit>
+				<p:layoutUnit position="center" style="border: 1px solid #a8a8a8;">
+					<p:panel header="Search Results">
+					<h:form>
+						<p:dataTable id="tbl" var="mwrs"
+							value="#{mwrsSearchResultsView.mwrs}"
+							paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} 
+							{NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+							rowsPerPageTemplate="10,25,50,100,#{mwrsSearchResultsView.mwrs.size()}"
+							paginator="true" rows="10" style="margin-bottom:20px; overflow:auto"
+							resizableColumns="true" 
+							reflow="true" emptyMessage="No records found with given criteria" >
+
+							<p:column headerText="Receiver SWR" sortBy="#{mwrs.receiverSWR}"
+								colspan="5">
+								<h:outputText value="#{mwrs.receiverSWR}" />
+							</p:column>
+
+							<p:column headerText="Report Month" sortBy="#{mwrs.month}"
+								colspan="5">
+								<h:outputText value="#{mwrs.month}" />
+							</p:column>
+
+							<p:column headerText="Report Year" sortBy="#{mwrs.year}"
+								colspan="5">
+								<h:outputText value="#{mwrs.year}" />
+							</p:column>
+
+							<p:column headerText="View" colspan="1">
+								<p:commandButton icon="fa fa-binoculars fileView" title="view"
+									alt="view"></p:commandButton>
+								<!--&nbsp;
+								<p:commandLink title="view"><i class="fa fa-file-o fileView fa-lg" /></p:commandLink>&nbsp;
+								<p:link><i class="fa fa-search fileView fa-lg" /></p:link>&nbsp;
+								<p:link><i class="fa fa-file-text fileView fa-lg" /></p:link>&nbsp;
+								<p:link><i class="fa fa-file-text-o fileView fa-lg" /></p:link>&nbsp;
+								<p:link><i class="fa fa-book fileView fa-lg" /></p:link> -->
+							</p:column>
+
+							<p:column headerText="Edit" colspan="1">
+								<p:commandButton title="edit" alt="edit"
+									icon="fa fa-pencil-square-o fileEdit"></p:commandButton>
+								<!-- &nbsp;
+								<p:link><i class="fa fa-pencil fileEdit fa-lg" /></p:link>&nbsp;
+								<p:link><i class="fa fa-pencil-square fileEdit fa-lg" /></p:link>&nbsp;
+								<p:link><i class="fa fa-paint-brush fileEdit fa-lg" /></p:link> -->
+							</p:column>
+
+							<p:column headerText="Delete" colspan="1">
+								<p:commandButton title="delete" alt="delete"
+									icon="fa fa-trash fileDelete"></p:commandButton>
+								<!-- &nbsp;
+								<p:link><i class="fa fa-trash-o fileDelete fa-lg" /></p:link>&nbsp;
+								<p:link><i class="fa fa-times-circle fileDelete fa-lg" /></p:link>&nbsp;
+								<p:link><i class="fa fa-times-circle-o fileDelete fa-lg" /></p:link>&nbsp;
+								<p:link><i class="fa fa-remove fileDelete fa-lg" /></p:link> -->
+							</p:column>
+
+							<!-- <f:facet name="footer">
+        						In total there are #{mwrsSearchResultsView.mwrs.size()} records.
+    						</f:facet> -->
+
+						</p:dataTable>
+						</h:form>
+						<p:commandButton value="Cancel" />
+					</p:panel>
+				</p:layoutUnit>
+			</p:layout>
+		</div>
+		<div id="footer">
+			<p>
+				Powered by <a style="color: white;" href="http://primefaces.org">PrimeFaces</a>
+				6.0, <a style="color: white;" class="page-link"
+					href="http://wildfly.org">WildFly</a>7.0.
+			</p>
+		</div>
+	</div>
+
+
+	<!-- <p:panel>
+			<p:outputLabel value="test"></p:outputLabel>
+</p:panel> -->
+	<!-- <p:layout>
+			<p:layoutUnit position="center" resizable="true">
+		        You are here:MWRS Search
+		    </p:layoutUnit>
+		    <p:panel>
+		    	<p:outputLabel value="Name of tutorial you're looking for:"></p:outputLabel>
+		    
+		    </p:panel>
+		</p:layout>  -->
+
+	<!--  <p:panel header="PrimeFaces Hello World Example">
+			<h:panelGrid columns="2" cellpadding="4">
+				<h:outputText value="First Name: " />
+				<p:inputText value="#{helloWorld.firstName}" />
+
+				<h:outputText value="Last Name: " />
+				<p:inputText value="#{helloWorld.lastName}" />
+
+				<p:commandButton value="Submit" update="greeting"
+					oncomplete="PF('greetingDialog').show()" />
+			</h:panelGrid>
+		</p:panel>
+
+		<p:dialog header="Greeting" widgetVar="greetingDialog" modal="true"
+			resizable="false">
+			<h:panelGrid id="greeting" columns="1" cellpadding="4">
+				<h:outputText value="#{helloWorld.showGreeting()}" />
+			</h:panelGrid>
+		</p:dialog>  -->
+</body>
+</html>

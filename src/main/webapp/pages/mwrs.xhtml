@@ -1,0 +1,122 @@
+<ui:composition template="/template/common/paris_template.xhtml"
+ 				xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ds="http://deltaspike.apache.org/jsf"
+				xmlns:p="http://primefaces.org/ui">
+
+<ui:define name="center-page-content">
+	<ds:windowId />
+	<p:panel id="centerPanel" style="oveflow:hidden">
+		<p:breadCrumb>
+			<p:menuitem value="Home:" url="#" />
+			<p:menuitem value="IHW" url="#" />
+			<p:menuitem value="MWRS Search" url="#" />
+		</p:breadCrumb>
+		<p:panel header="MWRS Search">
+			<p:messages id="messages" showDetail="true" autoUpdate="true"
+				closable="true" />
+		</p:panel>
+		<p:panel header="Search Criteria">
+			<h:panelGrid columns="4" width="80%">
+				<p:outputLabel id="receiverSWRLabel" value="Receiver SWR:"></p:outputLabel>
+				<h:panelGrid cellpadding="0" cellspacing="0">
+					<h:panelGroup>
+						<p:inputText size="5" maxlength="10" id="receiverSWRText" />
+						<p:outputLabel value="&#160;&#160;" />
+						<p:commandButton id="searchForRecSWRBtn" value="Search for Receiver SWR" />
+					</h:panelGroup>
+				</h:panelGrid>
+				<p:outputLabel id="manifestLabel">Manifest #:</p:outputLabel>
+				<p:inputText size="20" maxlength="12" id="manifestText" />
+				<p:outputLabel id="generatorSWRLabel">Generator SWR:</p:outputLabel>
+				<h:panelGrid cellpadding="0" cellspacing="0">
+					<h:panelGroup>
+						<p:inputText size="5" maxlength="10" id="generatorSWRText" />
+						<p:outputLabel value="&#160;&#160;" />
+						<p:commandButton id="searchForGenSWRBtn" value="Search for Generator SWR" />
+					</h:panelGroup>
+				</h:panelGrid>
+				<p:outputLabel id="reportMonthLabel">Report Month:</p:outputLabel>
+				<p:selectOneMenu id="reportMonthList">
+					<f:selectItem itemLabel="" itemValue="" />
+					<f:selectItem itemLabel="January" itemValue="Jan" />
+					<f:selectItem itemLabel="February" itemValue="Feb" />
+					<f:selectItem itemLabel="March" itemValue="Mar" />
+					<f:selectItem itemLabel="April" itemValue="Apr" />
+					<f:selectItem itemLabel="May" itemValue="May" />
+					<f:selectItem itemLabel="June" itemValue="Jun" />
+					<f:selectItem itemLabel="July" itemValue="Jul" />
+					<f:selectItem itemLabel="August" itemValue="Aug" />
+					<f:selectItem itemLabel="September" itemValue="Sep" />
+					<f:selectItem itemLabel="October" itemValue="Oct" />
+					<f:selectItem itemLabel="November" itemValue="Nov" />
+					<f:selectItem itemLabel="December" itemValue="Dec" />
+				</p:selectOneMenu>
+				<p:outputLabel id="twcLabel">TWC:</p:outputLabel>
+				<p:inputText size="20" maxlength="10" id="twcText" />
+				<p:outputLabel id="reportYearLabel">Report Year:</p:outputLabel>
+				<p:inputText size="5" maxlength="10" id="reportYearText" />
+				<p:outputLabel id="recordIdLabel">Record Id:</p:outputLabel>
+				<p:inputText size="20" maxlength="10" id="recordIdText" />
+			</h:panelGrid>
+			<p:separator/>
+			<h:panelGrid columns="3">
+				<p:commandButton id="searchBtn" value="Search" actionListener="#{messagesView.all}"/>
+				<p:commandButton id="clearBtn" value="Clear" />
+				<p:commandButton id="createNewSumBtn" value="Ceate New Summary" />
+			</h:panelGrid>
+		</p:panel>
+		<p:panel header="Search Results" style="border: 1px solid #a8a8a8;">
+
+			<p:dataTable id="tbl" var="mwrs"
+				value="#{mwrsSearchResultsView.mwrs}"
+				paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} 
+							{NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="10,25,50,100,#{mwrsSearchResultsView.mwrs.size()}"
+				paginator="true" rows="10" style="margin-bottom:20px; overflow:auto"
+				scrollable="true" scrollHeight="250" sortMode="single"
+				resizableColumns="true" reflow="true"
+				emptyMessage="No records found with given criteria">
+
+				<p:column headerText="Receiver SWR" sortBy="#{mwrs.receiverSWR}"
+					colspan="5">
+					<h:outputText value="#{mwrs.receiverSWR}" />
+				</p:column>
+
+				<p:column headerText="Report Month" sortBy="#{mwrs.month}"
+					colspan="5">
+					<h:outputText value="#{mwrs.month}" />
+				</p:column>
+
+				<p:column headerText="Report Year" sortBy="#{mwrs.year}" colspan="5">
+					<h:outputText value="#{mwrs.year}" />
+				</p:column>
+
+				<p:column headerText="View" colspan="1">
+					<p:commandButton icon="fa fa-binoculars fileView" title="view"
+						alt="view"></p:commandButton>
+				</p:column>
+
+				<p:column headerText="Edit" colspan="1">
+					<p:commandButton title="edit" alt="edit"
+						icon="fa fa-pencil-square-o fileEdit"></p:commandButton>
+				</p:column>
+
+				<p:column headerText="Delete" colspan="1">
+					<p:commandButton title="delete" alt="delete"
+						icon="fa fa-trash fileDelete"></p:commandButton>
+				</p:column>
+
+				<f:facet name="footer">
+        			In total there are #{mwrsSearchResultsView.mwrs.size()} records.
+    			</f:facet>
+
+			</p:dataTable>
+			<p:separator/>
+			<p:commandButton id="cancelBtn" value="Cancel" />
+		</p:panel>
+	</p:panel>
+	</ui:define>
+</ui:composition>

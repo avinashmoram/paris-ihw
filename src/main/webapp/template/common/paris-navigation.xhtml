@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition>
+	<p:tree id="navTree" value="#{treeIconView.root}" var="doc" selectionMode="single" cache="false"
+		selection="#{treeIconView.selectedNode}" update="navTree">
+		<p:treeNode expandedIcon="fa fa-folder-open" collapsedIcon="fa fa-folder">
+			<h:outputText value="#{doc.name}" />
+		</p:treeNode>
+		<p:treeNode type="document" icon="fa fa-file-text-o fileColor">
+			<h:outputText value="#{doc.name}" />
+		</p:treeNode>
+		<p:ajax event="select" listener="#{treeIconView.onNodeSelect}" />
+	</p:tree>
+</ui:composition>
+</html>

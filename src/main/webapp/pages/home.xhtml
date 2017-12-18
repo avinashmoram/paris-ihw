@@ -1,0 +1,21 @@
+<ui:composition template="/template/common/paris_template.xhtml"
+ 				xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:ds="http://deltaspike.apache.org/jsf"
+				xmlns:p="http://primefaces.org/ui">
+				
+	<ui:define name="center-page-content">
+		<ds:windowId />
+		<p:panel id="centerPanel" style="oveflow:hidden">
+			<p:panel id="news" header="News">
+				<center>
+					<p:graphicImage value="/resources/images/logo.gif" />
+				</center>
+			</p:panel>
+			<p:panel id="build" header="Build Information">
+				<p>Build Configuration Used: AVI</p>
+			</p:panel>
+		</p:panel>
+	</ui:define>
+</ui:composition>

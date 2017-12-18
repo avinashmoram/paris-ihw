@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:ds="http://deltaspike.apache.org/jsf"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<title>Registration Information System</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<h:outputStylesheet name="css/ihw.css" />
+</h:head>
+<h:body>
+	<ds:windowId />
+	<div id="wrapper">
+		<p:layout fullpage="true">
+			<p:layoutUnit id="header" position="north" resizable="false">
+				<ui:include src="paris-header.xhtml" />
+			</p:layoutUnit>
+			<p:layoutUnit id="paris-navigation-tree" position="west" header=""
+				collapsible="true" size="260" resizable="false">
+				<ui:include src="paris-navigation.xhtml" />
+			</p:layoutUnit>
+			<p:layoutUnit id="center" position="center" >
+				<h:form id="formCenter" name="formCenter">
+					<ui:insert name="center-page-content" />
+				</h:form>
+			</p:layoutUnit>
+			<p:layoutUnit id="footer" position="south" size="30" style="top:820px">
+				<ui:include src="paris-footer.xhtml" />
+			</p:layoutUnit>
+			
+		</p:layout>
+	</div>
+</h:body>
+</html>
